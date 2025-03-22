@@ -41,6 +41,15 @@ struct GreetingView: View {
             }
             .padding(.horizontal)
             
+            Stepper {
+                Text("Font size is \(Int(fontSize)) points big")
+            } onIncrement: {
+                fontSize += 1
+            } onDecrement: {
+                fontSize -= 1
+            }
+            .padding()
+            
             // Color picker
             ColorPicker("Text color", selection: $textColor)
                 .padding(.horizontal)
